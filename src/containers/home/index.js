@@ -1,5 +1,6 @@
 import React from 'react';
 import ViewModel from './view-model';
+import classes from './style.less';
 
 export default class Home extends React.Component {
 
@@ -13,10 +14,10 @@ export default class Home extends React.Component {
 		const { content } = this.vm;
 
 		return (
-			<>
-				<h2>React-project</h2>
-				<p>{content}</p>
-			</>
+			<div className={classes.home}>
+				<h2>NASA</h2>
+				<p>从根本上改善开发调试效率的可视化工具</p>
+			</div>
 		)
 	}
 }

@@ -36,12 +36,17 @@ module.exports = ({ mode }) => ({
 						loader: 'css-loader',
 						options: {
 							modules: {
-								localIdentName: '[local]-[hash:base64:5]',
+								localIdentName: '[local]',
 							},
 							sourceMap: mode !== 'production'
 						}
 					},
-					'less'
+					{
+						loader: 'less',
+						options: {
+							sourceMap: true
+						}
+					}
 				],
 				include: [
 					path.resolve(__dirname, '../src'),

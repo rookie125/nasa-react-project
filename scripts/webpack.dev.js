@@ -12,10 +12,10 @@ module.exports = ({ mode, mock }, ...others) => webpackMerge(webpackBase({ mode 
 	devServer: {
 		clientLogLevel: 'warning',
 		disableHostCheck: true,
-		port: 8000,
-		hot: true,
+		port: 8001,
+		hot: false,
+		inline: false,
 		before: app => mock && mockServer(path.resolve(__dirname, '../mock'), app),
-		host: '0.0.0.0',
 		contentBase: '../src',
 		compress: true,
 		proxy: proxyConfig[mode] || {},
@@ -39,6 +39,6 @@ module.exports = ({ mode, mock }, ...others) => webpackMerge(webpackBase({ mode 
 	},
 	bail: true,
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		// new webpack.HotModuleReplacementPlugin()
 	]
 });

@@ -1,12 +1,10 @@
-import { computed } from 'mobx';
+import { computed, observable } from 'mobx';
 import store from './store';
 
 export default class ViewModel {
-    @computed get content() {
-        return store.content
-    }
+	@observable content = 'ViewModelContent';
 
     fetchContent() {
-        store.fetchContent();
+        this.content = 'fetch successful';
     }
 }
